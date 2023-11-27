@@ -1,3 +1,55 @@
 {
-  "extends": "next/core-web-vitals"
+  "plugins": ["unused-imports", "@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "prettier",
+    "next/core-web-vitals",
+    "plugin:i18next/recommended",
+    "plugin:storybook/recommended",
+    "plugin:tailwindcss/recommended",
+    "prettier"
+  ],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "error",
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "i18next/no-literal-string": "off",
+    "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/no-empty-function": "warn",
+    "jsx-a11y/accessible-emoji": "off",
+    "no-unused-vars": "off",
+    "curly": "error",
+    "no-nested-ternary": "error",
+    "no-unneeded-ternary": "error",
+    "no-else-return": ["error", { "allowElseIf": false }],
+    "@typescript-eslint/no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "error",
+    "react/function-component-definition": [
+      "warn",
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "react/no-array-index-key": "warn",
+    "no-fallthrough": "off",
+    "react/prop-types": "off",
+    "react/display-name": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/self-closing-comp": [
+      "error",
+      {
+        "component": true,
+        "html": true
+      }
+    ]
+  }
 }

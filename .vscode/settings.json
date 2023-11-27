@@ -1,0 +1,23 @@
+{
+  "terminal.integrated.copyOnSelection": true,
+  "search.exclude": {
+    "**/.next": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.renderWhitespace": "all",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"],
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]",
+    "@TODO",
+    "@NOTE",
+    "@SEE"
+  ]
+}

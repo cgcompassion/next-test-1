@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "amatiasq.sort-imports",
+    "bradlc.vscode-tailwindcss",
+    "dbaeumer.vscode-eslint",
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "graphql.vscode-graphql",
+    "tyriar.sort-lines",
+    "rohit-gohri.format-code-action",
+    "gruntfuggly.todo-tree",
+    "ahebrank.yaml2json"
+  ]
+}
