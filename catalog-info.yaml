@@ -6,6 +6,8 @@ kind: Component
 metadata:
   name: next-test-1
   description: Developing a NextJS Starter
+  annotations:
+    backstage.io/techdocs-ref: value
   tags:
     - nextjs
     - typescript
