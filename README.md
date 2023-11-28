@@ -16,23 +16,5 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 To Investigate:
 
-Extablish Eslint / Prettier standards
-
-- @semantic-release/changelog
-- @semantic-release/commit-analyzer
-- @semantic-release/git
-- @semantic-release/github
-- @semantic-release/npm
-- @semantic-release/release-notes-generator
-- @vercel/otel
-
----
-
-- @opentelemetry/api
-- @opentelemetry/resources
-- @opentelemetry/sdk-node
-- @opentelemetry/sdk-trace-node
-- @opentelemetry/semantic-conventions
-- patch-package
-- postinstall-postinstall
-- semantic-release
+- Ideal Github Workflows
+- Backstage

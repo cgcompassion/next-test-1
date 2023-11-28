@@ -8,6 +8,13 @@
   "editor.formatOnPaste": true,
   "editor.formatOnSave": false,
   "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"],
+  "tailwindCSS.experimental.classRegex": [
+    [
+      "cva(?:<[^>]*>)?(([^)]*))",
+      "[\"'`]([^\"'`]*).*?[\"'`]",
+      "(?:twMerge|twJoin)\\(([^\\);]*)[\\);]"
+    ]
+  ],
   "todo-tree.general.tags": [
     "BUG",
     "HACK",
