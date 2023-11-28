@@ -1,5 +1,5 @@
 site_name: 'next-test-1'
 
 nav:
-  - Home: ../README.md
+  - Home: roadmap.md
   - Roadmap: roadmap.md
