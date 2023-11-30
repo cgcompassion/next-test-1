@@ -1,9 +1,9 @@
-import { Button } from '@/components/Button/Button';
-import { HSHHero } from '@/components/HSHHero/HSHHero';
+import { Button } from '@/custom-components/Button/Button';
+import { HSHHero } from '@/custom-components/HSHHero/HSHHero';
 import Image from 'next/image';
-import { PageSection } from '@/components/PageSection/PageSection';
+import { PageSection } from '@/custom-components/PageSection/PageSection';
 import React from 'react';
-import { Typography } from '@/components/Typography/Typography';
+import { Typography } from '@/custom-components/Typography/Typography';
 
 const section1_1 = (
   <Typography key={0}>
@@ -59,7 +59,6 @@ const Home: React.FC = () => {
           response to what they&apos;ve experienced.
         </Typography>
         <Button href="/resources">Register for Hope Starts Here Online</Button>
-        <Columns content={[section1_1, section1_2]} arrangement="1-2" />
       </PageSection>
     </main>
   );
