@@ -1,23 +1,45 @@
-import Image from "next/image"
+import { HSHHero } from '@/components/HSHHero/HSHHero';
+import Image from 'next/image';
+import { PageSection } from '@/components/PageSection/PageSection';
+import React from 'react';
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Page 1!
+    <main>
+      <HSHHero />
+      <PageSection>
+        <Image
+          src={'/img/cross-icon.png'}
+          width="50"
+          height="50"
+          className="m-auto"
+          alt=""
+        />
+        <p className="my-5 text-center text-3xl">
+          Ignite conversations. Commit to biblical justice.{' '}
+          <strong>
+            And grow your church&apos;s heart for discipleship, generosity and
+            global mission.
+          </strong>
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="/resources"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By <Image src="/vercel.svg" alt="Vercel Logo" className="dark:invert" width={100} height={24} priority />
-          </a>
-        </div>
-      </div>
+        <p className="my-5 text-center">
+          Hope Starts Here Online is a Compassion experience specifically
+          designed for small groups. If you&apos;re a leader looking to host a
+          unique event, or if you&apos;re looking for resources to complement
+          your existing small groups, youth groups or Bible studies, Hope Starts
+          Here Online is for you.
+        </p>
+        <p className="my-5 text-center">
+          Hope Starts Here Online is free to host and attend. It is self-paced
+          but takes most small groups approximately 45 minutes to complete. It
+          can be streamed online or downloaded to your own device to make it as
+          easy and accessible as possible. And we&apos;ll send you guides and
+          resources to help plan your event — along with profiles of unsponsored
+          children to give your small group an opportunity to sponsor in
+          response to what they&apos;ve experienced.
+        </p>
+      </PageSection>
     </main>
-  )
-}
+  );
+};
+export default Home;

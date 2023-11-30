@@ -27,7 +27,6 @@
     "class-variance-authority": "^0.7.0",
     "next": "14.0.3",
     "next-compose-plugins": "^2.2.1",
-    "next-i18next": "^15.0.0",
     "react": "^18",
     "react-dom": "^18",
     "tailwind-merge": "^2.0.0",
