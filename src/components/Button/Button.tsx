@@ -1,24 +1,26 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 
 import { twMerge } from 'tailwind-merge';
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 
 const button = cva(
   [
     'justify-center',
     'inline-flex',
     'items-center',
-    'rounded-xl',
+    'rounded',
     'text-center',
     'border',
     'border-blue-400',
     'transition-colors',
-    'delay-50',
+    'delay-100',
+    'uppercase',
+    'm-auto',
   ],
   {
     variants: {
       intent: {
-        primary: ['bg-blue-400', 'text-white', 'hover:enabled:bg-blue-700'],
+        primary: ['bg-[#006ab4]', 'text-white', 'hover:enabled:bg-blue-700'],
         secondary: [
           'bg-transparent',
           'text-blue-400',
@@ -27,8 +29,9 @@ const button = cva(
         ],
       },
       size: {
-        sm: ['min-w-20', 'h-full', 'min-h-10', 'text-sm', 'py-1.5', 'px-4'],
-        lg: ['min-w-32', 'h-full', 'min-h-12', 'text-lg', 'py-2.5', 'px-6'],
+        sm: ['h-full', 'text-sm', 'py-1.5', 'px-4'],
+        lg: ['h-full', 'text-sm', 'py-2.5', 'px-6'],
+        full: ['h-full', 'text-sm', 'py-2.5', 'px-6', 'block'],
       },
       underline: { true: ['underline'], false: [] },
     },
@@ -36,29 +39,45 @@ const button = cva(
       intent: 'primary',
       size: 'lg',
     },
-  }
+  },
 );
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLAnchorElement>,
+  extends React.ButtonHTMLAttributes<HTMLAnchorElement | HTMLButtonElement>,
     VariantProps<typeof button> {
   underline?: boolean;
-  href: string;
+  href?: string;
+  callback?: () => void;
 }
 
-export const Button = ({
+export const Button: React.FC<PropsWithChildren<ButtonProps>> = ({
   className,
   intent,
   size,
   underline,
-  ...props
-}: ButtonProps) => {
+  href,
+  callback,
+  children,
+}) => {
+  if (!href && !callback) {
+    return;
+  }
+  if (href) {
+    return (
+      <a
+        className={twMerge(button({ intent, size, className, underline }))}
+        href={href}
+      >
+        {children}
+      </a>
+    );
+  }
   return (
-    <a
+    <button
       className={twMerge(button({ intent, size, className, underline }))}
-      {...props}
+      onClick={callback}
     >
-      {props.children}
-    </a>
+      {children}
+    </button>
   );
 };

@@ -1,14 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --background-rgb: 250, 250, 250;
-  --foreground-rgb: 19, 19, 19;
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-start-rgb));
-  min-width: 320px;
-}
