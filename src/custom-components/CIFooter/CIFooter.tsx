@@ -1,7 +1,8 @@
 import Image from 'next/image';
-import { PageSection } from '../PageSection/PageSection';
+import { PageSection } from '@/custom-components/PageSection/PageSection';
 import React from 'react';
-import { Typography } from '../Typography/Typography';
+import { Typography } from '@/custom-components/Typography/Typography';
+import compassionLogo from '../../../public/img/compassion-logo.png';
 
 // @TODO: Use the real CI Footer
 
@@ -38,7 +39,7 @@ export const CIFooter: React.FC = () => {
         <div className="basis-1/2 text-right">
           <Image
             className="inline-block"
-            src="/img/compassion-logo.png"
+            src={compassionLogo}
             width={100}
             height={37}
             alt="Compassion International"

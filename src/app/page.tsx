@@ -6,6 +6,7 @@ import { PageSection } from '@/custom-components/PageSection/PageSection';
 import React from 'react';
 import { Separator } from '@/components/ui/separator';
 import { Typography } from '@/custom-components/Typography/Typography';
+import crossIcon from '../../public/img/cross-icon.png';
 
 const Home: React.FC = () => {
   return (
@@ -13,7 +14,7 @@ const Home: React.FC = () => {
       <HSHHero />
       <PageSection center className="bg-alabaster-50">
         <Image
-          src={'/img/cross-icon.png'}
+          src={crossIcon}
           width="50"
           height="50"
           className="m-auto"

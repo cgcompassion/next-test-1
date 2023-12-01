@@ -3,11 +3,12 @@ import { HSHRegistrationForm } from '@/custom-components/HSHRegistrationForm/HSH
 import { PageSection } from '@/custom-components/PageSection/PageSection';
 import React from 'react';
 import { Typography } from '@/custom-components/Typography/Typography';
+import heroImage from '../../../public/img/hsh-hero-image-2-large.jpg';
 
 const Register: React.FC = () => {
   return (
     <main>
-      <HSHHeroCustom backgroundImageUrl="/img/hsh-hero-image-2-large.jpg">
+      <HSHHeroCustom backgroundImage={heroImage}>
         <Typography asChild variant={'superHeaderFeature'}>
           <h1>Register your church to host Hope Starts Here Online.</h1>
         </Typography>

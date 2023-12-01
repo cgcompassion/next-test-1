@@ -1,4 +1,9 @@
-This is a [Next.js](https://nextjs.org/) project that Chris is using to demonstrate various tooling as a possible starter system.
+First attempt at a Next.JS site for Hope Starts Here.
+
+We will use this to develop a pattern for future sites.
+
+Step 1: Implement the site using static content.
+Step 2: Leverage the CMS solution to make the content dynamic.
 
 ## Getting Started
 
@@ -10,11 +15,20 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+More fun commands!
+
+```bash
+bun storybook
+bun test
+bun lint
+```
 
 ## Learn More
 
 To Investigate:
 
 - Ideal Github Workflows
-- Backstage
+- Implement Backstage or other catalog solution
+- Get playwright to work with Bun for e2e tests.
+- Implement proper event tracking solution
+- Implement I18n (maybe wait for CMS integration)

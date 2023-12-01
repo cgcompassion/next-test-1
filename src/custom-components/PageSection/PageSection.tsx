@@ -1,5 +1,6 @@
 import React, { PropsWithChildren } from 'react';
 
+import { StaticImageData } from 'next/image';
 import { cva } from 'class-variance-authority';
 import { twMerge } from 'tailwind-merge';
 
@@ -23,18 +24,18 @@ const sectionInner = cva(['mx-auto max-w-2xl'], {
 
 export interface PageSectionProps {
   className?: string;
-  backgroundImageUrl?: string;
+  backgroundImage?: StaticImageData;
   center?: boolean;
 }
 
 export const PageSection: React.FC<PropsWithChildren<PageSectionProps>> = ({
   className,
-  backgroundImageUrl,
+  backgroundImage,
   children,
   center,
 }) => {
   const bgImageVar = {
-    '--image-url': `url(${backgroundImageUrl})`,
+    '--image-url': `url(${backgroundImage?.src})`,
   } as React.CSSProperties;
   return (
     <section

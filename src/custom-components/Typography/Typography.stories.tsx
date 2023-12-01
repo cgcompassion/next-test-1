@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { PageSection } from '../PageSection/PageSection';
 import { Typography } from './Typography';
 
 const meta: Meta<typeof Typography> = {
@@ -28,7 +29,11 @@ const meta: Meta<typeof Typography> = {
 type Story = StoryObj<typeof Typography>;
 
 export const Default: Story = {
-  render: (args) => <Typography {...args} />,
+  render: (args) => (
+    <PageSection className="bg-stone-300">
+      <Typography {...args} />
+    </PageSection>
+  ),
 };
 
 export default meta;
