@@ -1,30 +1,48 @@
+import * as React from 'react';
+import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
 
-import { twMerge } from 'tailwind-merge';
-import React, { PropsWithChildren } from 'react';
+import { cn } from '@/lib/utils';
 
-const typo = cva(['my-4'], {
+const typographyVariants = cva('text-alabaster-990', {
   variants: {
     variant: {
-      default: [''],
-      feature: ['text-3xl'],
-      label: ['text-sm uppercase'],
-      quote: ['font-black uppercase'],
+      paragraphFooter: ['my-4 text-xs text-alabaster-50'],
+      paragraph: ['my-4'],
+      feature: ['my-4 text-3xl'],
+      superHeaderFeature: [
+        'inline bg-matisse box-decoration-clone px-2 text-3xl font-bold leading-normal text-alabaster-50',
+      ],
+      headerFeature: [
+        'inline bg-alabaster-50 box-decoration-clone px-2 text-center text-xl font-bold leading-normal text-black',
+      ],
+      label: ['my-4 text-sm uppercase'],
+      quote: ['my-4 font-black uppercase'],
     },
   },
   defaultVariants: {
-    variant: 'default',
+    variant: 'paragraph',
   },
 });
 
 export interface TypographyProps
-  extends React.HTMLAttributes<HTMLParagraphElement>,
-    VariantProps<typeof typo> {}
+  extends React.BaseHTMLAttributes<HTMLParagraphElement>,
+    VariantProps<typeof typographyVariants> {
+  asChild?: boolean;
+}
 
-export const Typography: React.FC<PropsWithChildren<TypographyProps>> = ({
-  className,
-  variant,
-  children,
-}) => {
-  return <p className={twMerge(typo({ variant, className }))}>{children}</p>;
-};
+const Typography = React.forwardRef<HTMLParagraphElement, TypographyProps>(
+  ({ className, variant, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : 'p';
+    return (
+      <Comp
+        className={cn(typographyVariants({ variant, className }))}
+        ref={ref}
+        {...props}
+      />
+    );
+  },
+);
+Typography.displayName = 'Typography';
+
+export { Typography, typographyVariants };
